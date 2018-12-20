@@ -28,7 +28,6 @@ const fullpage = `<div class='header'><div class='left'><h3> Instance Name &nbsp
       </div>
     </div>
 
-
   </div>
 </div>`
 
@@ -36,5 +35,5 @@ const fullpage = `<div class='header'><div class='left'><h3> Instance Name &nbsp
 
 //initial setup
 
-// $('header').append(fullpage);
+$('header').append(`<div>${nutanixLogo}</div><div></div>`);
 // $('.left').prepend(nutanixLogo);
