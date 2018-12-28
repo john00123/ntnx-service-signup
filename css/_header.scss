@@ -1,0 +1,25 @@
+//main:style.scss
+
+
+header{
+  @include size(60px, 100%);
+  @include flex(center, space-between, row);
+  background: $background-color-1;
+  padding   : 0 20px;
+  color     : $white;
+}
+
+header{
+  top : 0;
+  left: 0;
+  position: fixed;
+}
+
+.logo{
+  @include size(16px, auto);
+  fill: $background-color-2;
+}
+
+.page-title{
+  margin-left: 15px;
+}
