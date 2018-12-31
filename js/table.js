@@ -174,6 +174,7 @@ $('container').append(`
       <h3><span> $</span> 45.000 </h3></div>
       <p style='margin-top:0; opacity:0.8;'> Starting date January 11 2019</p>
       <button fw>Complete purchase</button>
+      <img class='rotate' src='../img/rotate.svg'/>
     </div>
 
 

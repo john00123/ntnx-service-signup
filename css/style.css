@@ -581,6 +581,7 @@ input[type=text] {
   color: white;
   text-align: left;
   box-sizing: border-box;
+  position: relative;
   padding: 20px;
 }
 
@@ -594,6 +595,14 @@ input[type=text] {
   margin-top: 10px;
 }
 
+.rotate {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-animation: rotating 20s linear infinite;
+  mix-blend-mode: overlay;
+}
+
 .active {
   color: #22272E;
 }
@@ -602,4 +611,13 @@ input[type=text] {
   border-color: transparent;
   color: #FFFFFF;
   background: #22A5F7;
+}
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
