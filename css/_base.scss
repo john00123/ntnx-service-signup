@@ -1,6 +1,11 @@
 //main:style.scss
 
 * { @include font }
+*{
+  text-rendering:geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 html{
   @include inputStyle;
@@ -24,9 +29,11 @@ html{
 
 //alignment
 [hc] { @include flex(center, center, row)       }
+[hcs]{ @include flex(center, flex-start, row)   }
 [hs ]{ @include flex(flex-start, center, row)   }
 [hcd]{ @include flex(center, space-between, row)}
-[vc ]{ @include flex(center, flex-start, column)}
+[vcs]{ @include flex(center, flex-start, column)}
+[vc]{ @include flex(center, center, column)}
 
 //font
 h1{font:$h1}

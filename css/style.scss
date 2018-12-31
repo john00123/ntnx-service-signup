@@ -2,17 +2,19 @@
 
 @import '../../_ntnx/variables';
 @import '../../_ntnx/mixins';
-@import 'header';
 @import 'base';
+@import 'header';
+@import 'subheader';
 
+
+html{overflow-y: scroll};
 
 body{
   @include flex(center, center, column);
   @include size(100%, 100%);
   min-height: 100vh;
   max-width : 980px;
-  margin    : 0    ;
-  margin    : 60px auto 0 auto ;
+  margin    : 0 auto ;
 }
 
 
@@ -21,12 +23,6 @@ tr td{ border-top: 1px solid $background-color-3}
 
 [grid]{@include grid(300px, 1fr, 20px)}
 
-
-[fade]{
-  margin: 0 0 30px 0;
-  font-weight:   500;
-  text-transform: uppercase;
-}
 
 [blue]{
   color: $dark-blue-3;
@@ -37,11 +33,11 @@ tr td{ border-top: 1px solid $background-color-3}
 }
 
 [logo]{
-  width:         32px;
-  padding:       10px;
-  margin-right:  10px;
+  padding:       20px;
+  margin:  15px;
   border-radius: 25pc;
   background: $background-color-3;
+
 }
 
 [yellow]{
@@ -54,10 +50,12 @@ tr td{ border-top: 1px solid $background-color-3}
   @include transition(all);
   background: white;
   border-radius: 4px;
-  padding: 30px 20px;
+  padding: 0px 0px;
   text-align: center;
-  width: 300px;
+  // width: 300px;
   margin: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
 
   &:hover{
     @include shadow();
@@ -66,54 +64,189 @@ tr td{ border-top: 1px solid $background-color-3}
   }
 }
 
+.price-card{
+  padding: 30px;
+  text-align: left;
+  h2{text-align: left;}
+
+}
+form{
+  padding-left: 30px;
+  padding-top:30px;
+  padding-bottom: 30px;
+}
+
+form label{
+  line-height: 20px;
+}
+hr{
+  height: 1px ;
+  border: none;
+  background: $background-color-3;
+  width: 100%;
+}
+
 img { @include transition(transform) }
 
 td{
-  text-align: left;
-  height: 40px;
+  text-align: middle;
+  height: 50px;
+  line-height: 1.5;
+  width: 25%;
 }
 
-th{ padding-bottom: 20px }
-tr:last-child td{ border-left: 1px solid transparent}
+td:first-child{
+  text-align: left;
+  padding-left: 20px;
+}
+table{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+th{
+  padding: 20px 0;
+  line-height: 1.5;
+  vertical-align:middle;
+  border-top-right-radius: 4px;
+  &:last-child{
+
+    span{
+      color:$blue-1;
+      background-color: $semi-white-blue;
+      padding: 2px 10px;
+      border-radius: 3px;
+    }
+  }
+}
+
+tr:last-child td{
+  border-left-color: transparent;
+}
 td:not(:first-child){ border-left: 1px solid $background-color-3}
 
-
-[bullet]{
-  padding-left: 20px;
-  margin: auto;
-  transform: translateX(-10px);
-}
-
-[bullet]:before{
-  content: '';
-  display: inline-block;
-  height: 6px;
-  width: 6px;
-  background: $blue-1;
-  margin-right: 10px;
-  margin-left: -20px;
-  border-radius: 4pc;
-  margin-bottom: 2px;
-}
-
-
-
-[boxy]{ background: $background-color-3 }
-
-[col2]{
-  p{width: 100px;}
-  [ac]{padding: 0 20px}
-}
-
-[mid]{
-  text-align: center;
-  margin: auto;
-  padding: 10px 0;
-}
-
 container {
+  @include transition(all);
   margin: auto;
   height: 100%;
-  padding: 60px;
   min-height: 100vh;
+  margin-top: 120px;
+  padding: 40px 0;
+  opacity: 0;
+  transform: translate3d(0,-30px,0);
+}
+
+
+.spacer{
+  display: flex;
+  flex-shrink: 1;
+  width: 200px;
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
+}
+[fade]{
+  text-transform: uppercase;
+}
+
+input.calc0{
+  // width: auto!important;
+  // margin-left: -10px;
+  // border:none!important;
+  // font-size: 32px!important;
+  // height: auto!important;
+  // margin-bottom: -20px!important;
+}
+
+.price-component{
+  width: 440px;
+  position: relative;
+  flex-shrink: 0;
+  .block-hover{
+    @include transition(all);
+  }
+  @media screen and (max-width: 840px) {
+    width: 100%;
+
+  }
+}
+
+.logos{
+  @media screen and (max-width: 840px) {
+  display: none;
+
+}}
+input[type=text]{
+  -webkit-appearance: none;
+}
+
+.inputs{
+  position: relative;
+}
+
+.block-hover{
+  background: $background-color-3;
+  box-shadow: inset 0px 0px 0px 1px $border-color-1;
+  border-radius: 0 3px 3px 0;
+  position: absolute;
+  bottom: 20px;
+  right: 0px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  height: 32px;
+  width: 80px;
+}
+
+.steps{
+  @include transition(all);
+  span{
+    height: 20px;
+    width: 20px;
+    display:inline-flex;
+    font-size: 12px;
+    font-weight: 500;
+    color: $font-color-3;
+    border: 1.2px solid $border-color-2;
+    border-radius: 4pc;
+    margin-left: 30px;
+    margin-right: 15px;
+  }
+  @media screen and (max-width: 840px) {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  @media screen and (max-width: 820px) {
+    display: none;
+  }
+}
+
+.order{
+  background-image: linear-gradient(45deg,#673BD6,#2D96F2);
+  height: 100%;
+  background-size: cover;
+  color:white;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 20px;
+  button{
+    height: 32px;
+    -webkit-appearance:none;
+    border: 1px solid white;
+    // background: transparent;
+    // color:white;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+}
+
+.active{
+  color: $font-color-1;
+  span{
+    border-color: transparent;
+    color: $white;
+    background: $blue-1;
+  }
 }
