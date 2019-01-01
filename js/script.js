@@ -1,42 +1,39 @@
 
-$('container').append(`
-  <br>
-  <div card fw hcd class='price-card'>
-    <div class='price-component' vcs>
-    <h2 fw> 1. Input your monthly cloud cost </h2>
+$('container').append(
+  `<div card fw hsd>
+    <div class='block-one' vss>
+      <h2> 1. Input your monthly cloud cost </h2>
 
-    <p alt> Beam suscruptions are based on how much you spend on the cloud.<br> Provide an estimate of your month cloud expenses & pick a payment plan to continue</p>
-      <label style='padding:5px 0'> Monthly cloud cost</label>
-      <div fw class='inputs'>
-        <input class='calc0' type='text' value='100'/>
-        <div class='block-hover' vc><input id="price" type="range" name="points"  step="1" min="100000" max="400000"></div>
+      <p alt> Beam subscriptions are based on how much you spend on the cloud.<br> Provide an estimate of your month cloud expenses.</p><p style='margin: 0 0 20px 0'>If your expenses surpases the $400,000  <a>Contact Us</a> </p> <br>
+
+      <div class='input-currency'>
+        <label> Monthly cloud cost</label>
+        <input class='calc0' pattern="[0-9]*" type='text' placeholder='eg. 100,000'/>
       </div>
     </div>
 
-    <div>
-    <div class='logos' fw hcs style='justify-content: flex-start; flex-wrap:wrap; padding:20px 0; width:420px'>
-      <img logo width="32" height="32" src='img/azure.svg'/>
-      <img logo width="32" height="32" src='img/g.svg'/>
-      <img logo width="32" height="32" src='img/nutanix.svg'/>
-      <img logo width="32" height="32" src='img/aws.svg'/>
-      <img logo width="32" height="32" src='img/g.svg'/>
-      <img logo width="32" height="32" src='img/g.svg'/>
-      <img logo width="32" height="32" src='img/aws.svg'/>
-      <img logo width="32" height="32" src='img/g.svg'/>
-    </div>
-    </div>
-  </div>
-
-  `)
-
-  $('#price').on('input', function(){
-    price = this.value;
-    console.log(price);
-    data.map( value=>$('.calc').text(`$${Math.round(price * value.percentage)}.00`));
-    data.map( value=>$('.calc2').text(`$${Math.round(price * value.percentage * 12)}.00`));
-    data.map( value=>$('.calc0').val(Math.round(price)));
-  })
+    <img logo height=280px src='img/bg.png'/>
+   </div>
+  `
+)
 
 
-  ///
-  
+//input operations
+$('.calc0').on('input', function(){
+  price = parseFloat(this.value);
+
+  //month calc
+  data.map(value=>
+    $('.calc').text(`$ ${new Intl.NumberFormat().format(
+      Math.round(price * value.perc)) }.00`
+    )
+  );
+
+  //year calc
+  data.map( value=>
+    $('.calc2').text(`$ ${new Intl.NumberFormat().format(
+      Math.round(price * value.perc*12))}.00`
+    )
+  );
+
+})
