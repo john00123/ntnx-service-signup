@@ -4,34 +4,40 @@ let price = 100000
 
 //title data
 let j = ['',
-'Billing Period','Billing Cadence','Number of Periods','Minimum Commitment','']
+'User and Team Management','Centralized Billing','App Publishing to users','User customization','On demand GPU','Multi account Management','Multi-region Support','']
 
 //table data
 const data = [
   {
-    name:'Pay as you Go',
-    description:'Most flexible deal',
-    perc: 'Monthly',
-    period:'End of Cycle',
-    month: '-',
-    year: 'Unlimited',
+    name: 'Standard',
+    ut:1,
+    cb:1,
+    ap:1,
+    uc:1,
+    og:0,
+    ma:0,
+    mr:0,
   },
   {
-    name:'One Year Commitment',
-    description:'Some savings',
-        perc: 'Monthly',
-    period:'Beginning of Cycle',
-    month: '$5000',
-    year: 12
+    name: 'Pro',
+    ut:1,
+    cb:1,
+    ap:1,
+    uc:1,
+    og:1,
+    ma:0,
+    mr:0,
   },
   {
-    name:'3 Year Commitment',
-    description:'Most Savings',
-        perc: 'Monthly',
-    period:'Beginning of Cycle',
-    month: '$5000',
-    year: 36
-  }
+    name: 'Enterprise',
+    ut:1,
+    cb:1,
+    ap:1,
+    uc:1,
+    og:1,
+    ma:1,
+    mr:1,
+  },
 ]
 
 //create table container
@@ -43,15 +49,16 @@ $('container').append(`
 //add data to table
 $('table').append(`
   <tr><th/>
-    ${data.map(v =>`<th>${v.name}<br>
-     <span alt>${v.description}</span></th>`)}
+    ${data.map(v =>`<th>${v.name}</th>`)}
   </tr>
 
-  <tr> ${data.map(v =>`<td>${v.period  } </td>`)} </tr>
-  <tr> ${data.map(v =>`<td>${v.perc  } </td>`)} </tr>
-  <tr> ${data.map(v =>`<td>${v.year  } </td>`)} </tr>
-  <tr> ${data.map(v =>`<td>${v.month  } </td>`)} </tr>
-
+  <tr> ${data.map(v =>`<td>${v.ut  } </td>`)} </tr>
+  <tr> ${data.map(v =>`<td>${v.cb  } </td>`)} </tr>
+  <tr> ${data.map(v =>`<td>${v.ap  } </td>`)} </tr>
+  <tr> ${data.map(v =>`<td>${v.uc  } </td>`)} </tr>
+  <tr> ${data.map(v =>`<td>${v.og  } </td>`)} </tr>
+  <tr> ${data.map(v =>`<td>${v.ma  } </td>`)} </tr>
+  <tr> ${data.map(v =>`<td>${v.mr  } </td>`)} </tr>
   <tr> ${data.map(v =>`<td><button primary fw> Select</button></td>`)}</tr>
   `);
 
@@ -62,33 +69,18 @@ for(let i=1; i<j.length; i++){ $('tr').eq(i).prepend(`<td>${j[i]}</td>`)}
 ////////////////////////////////////////////////////////////////////
 
 
-$('table').before(
-  `<div fw hsd>
-    <div class='block-one' vss>
-      <h2> 1. Select your plan </h2>
+// $('table').before(
+//   `<div fw hsd>
+//     <div class='block-one' vss>
+//       <h2> 1. Select your plan </h2>
+//
+//       <p alt>A commitment ammount will help us calculate the estimated cost of using Leap. A larger commitment value the higher savings you will get.<br></p> <p> To know how we calculate our costs, <a>use our online calculator</a></p><br>
+//     </div>
+//    </div>
+//   `
+// )
+// $('table').before(`<hr>`)
 
-      <p alt>A commitment ammount will help us calculate the estimated cost of using Leap. A larger commitment value the higher savings you will get.<br></p> <p> To know how we calculate our costs, <a>use our online calculator</a></p><br>
-    </div>
-   </div>
-  `
-)
-$('table').before(`<hr>`)
-
-$('container').append(`
-  <div card fw hcd>
-    <div> <h2> Select Minimun commitment </h2>
-      <p alt> {This is the place we explain why a higher commitment is better for them.}</p>
-    </div>
-
-    <div  class='input-currency'>
-      <label> Estimated Commitment (Min. $5000.00)</label>
-      <input class='calc0' pattern="[0-9]*" type='text' placeholder='min. 5,000'/>
-    </div>
-
-  </div>
-`
-
-)
 //create main containers
 
 const info =[

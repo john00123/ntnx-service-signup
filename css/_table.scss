@@ -49,10 +49,10 @@ td:first-child{
 //column hover effect
 td::after{
   @include transition(opacity);
-  @include size(800px, 100%);
+  @include size(2000px, 100%);
   content: '';
   left   :  0;
-  top: -400px;
+  top: -1000px;
   z-index: -1;
   opacity:  0;
   position  : absolute   ;

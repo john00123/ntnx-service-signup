@@ -14,7 +14,7 @@ const backArrow = `
 //render header
 $('.subheader').append(`
   <div class='back-section' hcs>
-    ${backArrow} <h2 class='page-subtitle' hc >Leap</h2>
+    ${backArrow} <h2 class='page-subtitle' hc >Frame</h2>
     <h3 alt> Signup </h3>
   </div>
   <div class='steps' hcs>
