@@ -4,33 +4,33 @@ let price = 100000
 
 //title data
 let j = ['',
-'Cloud Cost Percentage','Billing Period','Monthly Cost','Annual Cost','']
+'Billing Period','Billing Cadence','Number of Periods','Minimum Commitment','']
 
 //table data
 const data = [
   {
-    name:'Monthly Plan',
+    name:'Pay as you Go',
     description:'Most flexible deal',
-    perc: 0.0475,
-    period:'Monthly',
-    month: 1,
-    year: 1,
+    perc: 'Monthly',
+    period:'End of Cycle',
+    month: '-',
+    year: 'Unlimited',
   },
   {
-    name:'Annual Commitment',
-    description:'Predictable billing',
-    perc: 0.0425,
-    period:'Monthly',
-    month: 1,
-    year: 1
+    name:'One Year Commitment',
+    description:'Some savings',
+        perc: 'Monthly',
+    period:'Beginning of Cycle',
+    month: '$5000',
+    year: 12
   },
   {
-    name:'Single Payment',
-    description:'Most Popular',
-    perc: 0.0375,
-    period:'Annual',
-    month: 0,
-    year: 1
+    name:'3 Year Commitment',
+    description:'Most Savings',
+        perc: 'Monthly',
+    period:'Beginning of Cycle',
+    month: '$5000',
+    year: 36
   }
 ]
 
@@ -46,17 +46,12 @@ $('table').append(`
     ${data.map(v =>`<th>${v.name}<br>
      <span alt>${v.description}</span></th>`)}
   </tr>
-  <tr> ${data.map(v =>`<td>${v.perc*100}%</td>`)} </tr>
+
   <tr> ${data.map(v =>`<td>${v.period  } </td>`)} </tr>
+  <tr> ${data.map(v =>`<td>${v.perc  } </td>`)} </tr>
+  <tr> ${data.map(v =>`<td>${v.year  } </td>`)} </tr>
+  <tr> ${data.map(v =>`<td>${v.month  } </td>`)} </tr>
 
-  <tr> ${data.map(v => v.period !== 'Annual' ?
-      `<td class='calc'>$${price * v.perc}.00 </td>` :
-      `<td fade> - </td>`)}
-  </tr>
-
-  <tr> ${data.map(v =>`<td class='calc2'>$
-       ${price * v.perc*12}.00</td>`)}
-  </tr>
   <tr> ${data.map(v =>`<td><button primary fw> Select</button></td>`)}</tr>
   `);
 

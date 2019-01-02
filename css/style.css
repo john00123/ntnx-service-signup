@@ -552,10 +552,12 @@ container > * {
 
 input.calc0 {
   padding-left: 50px !important;
+  width: 200px;
 }
 
 .input-currency {
   position: relative;
+  width: 280px !important;
 }
 
 .input-currency::before, .input-currency::after {

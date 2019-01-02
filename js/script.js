@@ -2,13 +2,13 @@
 $('container').append(
   `<div card fw hsd>
     <div class='block-one' vss>
-      <h2> 1. Input your monthly cloud cost </h2>
+      <h2> 1. Input your commitment ammount </h2>
 
-      <p alt> Beam subscriptions are based on how much you spend on the cloud.<br> Provide an estimate of your month cloud expenses.</p><p style='margin: 0 0 20px 0'>If your expenses surpases the $400,000 dollars.<br><a>Contact our sales team</a> </p>
+      <p alt>A commitment ammount will help us calculate the estimated cost of using Leap. A larger commitment value the higher savings you will get.<br></p> <p> To know how we calculate our costs, <a>use our online calculator</a></p><br>
 
       <div class='input-currency'>
-        <label> Monthly cloud cost</label>
-        <input class='calc0' pattern="[0-9]*" type='text' placeholder='eg. 100,000'/>
+        <label> Estimated Commitment (Min. $5000.00)</label>
+        <input class='calc0' pattern="[0-9]*" type='text' placeholder='min. 5,000'/>
       </div>
     </div>
 
