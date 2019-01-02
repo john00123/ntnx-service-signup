@@ -642,6 +642,11 @@ input.calc0 {
   right: 15px;
 }
 
+.collector {
+  height: 240px;
+  background: url("../img/oval.svg");
+}
+
 .confirmation {
   padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
