@@ -75,17 +75,17 @@ $('table').before(
 $('table').before(`<hr>`)
 
 $('container').append(`
-<div card fw hcd>
-  <div> <h2> Select Minimun commitment </h2>
-    <p alt> {This is the place we explain why a higher commitment is better for them.}</p>
-  </div>
+  <div card fw hcd>
+    <div> <h2> Select Minimun commitment </h2>
+      <p alt> {This is the place we explain why a higher commitment is better for them.}</p>
+    </div>
 
-  <div  class='input-currency'>
-    <label> Estimated Commitment (Min. $5000.00)</label>
-    <input class='calc0' pattern="[0-9]*" type='text' placeholder='min. 5,000'/>
-  </div>
+    <div  class='input-currency'>
+      <label> Estimated Commitment (Min. $5000.00)</label>
+      <input class='calc0' pattern="[0-9]*" type='text' placeholder='min. 5,000'/>
+    </div>
 
-</div>
+  </div>
 `
 
 )
