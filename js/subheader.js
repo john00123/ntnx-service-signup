@@ -34,7 +34,3 @@ $(window).on("load", function() {
   }, 600);
 
 });
-
-$(window).scrollTop(60, function(){
-  alert('ji');
-});

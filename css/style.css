@@ -551,11 +551,14 @@ container > * {
 }
 
 input.calc0 {
-  padding-left: 50px !important;
+  width: 100px;
+  padding-left: 100px !important;
+  box-sizing: border-box;
 }
 
 .input-currency {
   position: relative;
+  padding: 0 40px;
 }
 
 .input-currency::before, .input-currency::after {
@@ -567,20 +570,21 @@ input.calc0 {
   width: auto;
   box-sizing: border-box;
   padding: 5px 15px;
+  color: #627386;
   position: absolute;
   z-index: 2;
-  top: 29px;
+  top: 18px;
 }
 
 .input-currency::before {
-  content: '$';
+  content: '0';
   left: 0;
   border-radius: 4px 0 0 4px;
   border-right: 1px solid #D5DAE0;
 }
 
 .input-currency::after {
-  content: '.00';
+  content: '400';
   right: 0;
   border-radius: 0 4px 4px 0;
 }
