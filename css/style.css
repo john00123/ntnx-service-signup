@@ -663,6 +663,14 @@ input.calc0 {
   text-decoration: underline;
 }
 
+table {
+  overflow: hidden;
+}
+
+table th {
+  padding-top: 20px;
+}
+
 form {
   width: 440px;
 }
