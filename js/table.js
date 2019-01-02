@@ -69,8 +69,6 @@ for(let i=1; i<j.length; i++){ $('tr').eq(i).prepend(`<td>${j[i]}</td>`)}
 ////////////////////////////////////////////////////////////////////
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 // $('table').before(
 //   `<div fw hsd>
 //     <div class='block-one' vss>
@@ -83,70 +81,8 @@ for(let i=1; i<j.length; i++){ $('tr').eq(i).prepend(`<td>${j[i]}</td>`)}
 // )
 // $('table').before(`<hr>`)
 
-||||||| c80237f... added right order
-$('table').before(
-  `<div fw hsd>
-    <div class='block-one' vss>
-      <h2> 1. Select your plan </h2>
-||||||| c80237f... added right order
-$('table').before(
-  `<div fw hsd>
-    <div class='block-one' vss>
-      <h2> 1. Select your plan </h2>
-=======
->>>>>>> parent of c80237f... added right order
 
-<<<<<<< HEAD
-      <p alt>A commitment ammount will help us calculate the estimated cost of using Leap. A larger commitment value the higher savings you will get.<br></p> <p> To know how we calculate our costs, <a>use our online calculator</a></p><br>
-    </div>
-   </div>
-  `
-)
-$('table').before(`<hr>`)
 
-$('container').append(`
-<div card fw hcd>
-  <div> <h2> Select Minimun commitment </h2>
-    <p alt> {This is the place we explain why a higher commitment is better for them.}</p>
-  </div>
-
-  <div  class='input-currency'>
-    <label> Estimated Commitment (Min. $5000.00)</label>
-    <input class='calc0' pattern="[0-9]*" type='text' placeholder='min. 5,000'/>
-  </div>
-
-</div>
-`
-
-)
-=======
-
->>>>>>> parent of c80237f... added right order
-||||||| c80237f... added right order
-      <p alt>A commitment ammount will help us calculate the estimated cost of using Leap. A larger commitment value the higher savings you will get.<br></p> <p> To know how we calculate our costs, <a>use our online calculator</a></p><br>
-    </div>
-   </div>
-  `
-)
-$('table').before(`<hr>`)
-
-$('container').append(`
-<div card fw hcd>
-  <div> <h2> Select Minimun commitment </h2>
-    <p alt> {This is the place we explain why a higher commitment is better for them.}</p>
-  </div>
-
-  <div  class='input-currency'>
-    <label> Estimated Commitment (Min. $5000.00)</label>
-    <input class='calc0' pattern="[0-9]*" type='text' placeholder='min. 5,000'/>
-  </div>
-
-</div>
-`
-
-)
-=======
->>>>>>> parent of c80237f... added right order
 //create main containers
 
 const info =[

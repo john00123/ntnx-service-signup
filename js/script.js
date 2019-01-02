@@ -1,6 +1,5 @@
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 $('container').append(
   `<div card fw hsd>
     <div class='block-one' vss>
