@@ -82,7 +82,41 @@ for(let i=1; i<j.length; i++){ $('tr').eq(i).prepend(`<td>${j[i]}</td>`)}
 // $('table').before(`<hr>`)
 
 
+<<<<<<< HEAD
 
+||||||| bb1b94d... added changes to Leap
+$('container').append(`
+  <div card fw hcd>
+    <div> <h2> Select Minimun commitment </h2>
+      <p alt> {This is the place we explain why a higher commitment is better for them.}</p>
+    </div>
+
+    <div  class='input-currency'>
+      <label> Estimated Commitment (Min. $5000.00)</label>
+      <input class='calc0' pattern="[0-9]*" type='text' placeholder='min. 5,000'/>
+    </div>
+
+  </div>
+`
+
+)
+=======
+$('container').append(`
+<div card fw hcd>
+  <div> <h2> Select Minimun commitment </h2>
+    <p alt> {This is the place we explain why a higher commitment is better for them.}</p>
+  </div>
+
+  <div  class='input-currency'>
+    <label> Estimated Commitment (Min. $5000.00)</label>
+    <input class='calc0' pattern="[0-9]*" type='text' placeholder='min. 5,000'/>
+  </div>
+
+</div>
+`
+
+)
+>>>>>>> parent of bb1b94d... added changes to Leap
 //create main containers
 
 const info =[
