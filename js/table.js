@@ -1,4 +1,5 @@
 
+// price variable
 let price = 100000
 
 //title data
@@ -63,24 +64,29 @@ $('table').append(`
 for(let i=1; i<j.length; i++){ $('tr').eq(i).prepend(`<td>${j[i]}</td>`)}
 
 
+////////////////////////////////////////////////////////////////////
+
 
 
 //create main containers
 
-const info = [{
+const info =[
+  {
   title:'Company information',
-  description:'Beam subscriptions are based on how much you spend on the cloud.<br> Provide an estimate of your month cloud expenses &amp; pick a payment plan to continue',
+  description:'Because there is no organization associated with this account, we need some basic information. This will make this account the administrator of the organization. Please verify this with your company before proceeding.',
   forms:['Company Name','Address','Zip Code','City','State','Country']
   },
   {
     title:'Payment Method',
-    description:'Inovice require a credit check',
+    description:'Add a payment method to your Nutanix Account to get started connecting to {Service}.<br><br>By continuing, you create a Nutanix Payments account <br> and agree to the <a>Terms of Service</a> and <a>Privacy Notice</a>',
     forms:['Card Number',"Card Holder's Name",'Exp. Date','CVV','Address','Zip Code','City','State','Country']
   }
 ]
 
 $('container').append(`<div class='company-info' card fw></div>`);
 
+
+//Forms
 info.map(value => $('.company-info').append(`
   <div class='two-col-block' fw hsd>
     <div class='block-one' fw>
@@ -95,63 +101,101 @@ info.map(value => $('.company-info').append(`
   </div>
 `));
 
+
+//Form main text
 $('.company-info').prepend(
-  `<h2>2. Company Details</h2> <p alt>
-  Beam subscriptions are based on how much you spend on the cloud.<br>Provide an estimate of your month cloud expenses & pick a payment plan to continue</p><br>`)
-
-
-
-
-
-$('container').append(`
-    <div fw hsd>
-      <div card fw class='price-card' vcs style='width:600px; flex-shrink:0'>
-        <div class='price-component' vcs style='align-self:flex-start'>
-        <h2 fw> 3. Review and Confirm </h2>
-
-        <p alt> Beam subscriptions are based on how much you spend on the cloud.<br> Provide an estimate of your month cloud expenses & pick a payment plan to continue</p>
-        </div>
-        <hr>
-
-        <div fw hcd>
-          <div vss="" style=" align-self: flex-start; margin: 0px 0; width: 770px;">
-                <h3> Payment Plan</h3>
-                  <p alt=""> Beam single payment annual plan</p>
-          </div>
-          <button secondary> Edit </button>
-        </div>
-
-      <hr>
-
-      <div fw hcd>
-        <div vss="" style=" align-self: flex-start; margin: 0px 0; width: 770px;">
-              <h3> Company details</h3>
-                <p alt=""> Nutanix <br>1740 Technology Dr #150, San Jose, CA 95110</p>
-        </div>
-        <button secondary> Edit </button>
-      </div>
-
-      <hr>
-      <div fw hcd>
-        <div vss="" style=" align-self: flex-start; margin: 0px 0; width: 770px;">
-              <h3> Automatic Renewals</h3>
-                <p alt="">To cancel your subscription, turn off automatic renewal,<br> before then end of term to avoid downtime.</p>
-        </div>
-        <button primary> Toggle </button>
-      </div>
-    </div>
-
-
-    <div card class='checkout'fw>
-      <h2 fw>Order Summary</h2>
-      <div hcd> <h3><span> 1</span> Annual Plan </h3>
-      <h3><span> $</span> 45.000 </h3></div>
-      <p style='margin-top:0; opacity:0.8;'> Starting date January 11 2019</p>
-      <button secondary fw>Complete purchase</button>
-      <img class='rotate' src='../img/rotate.svg'/>
-    </div>
-
-
+  `<div class='block-one' vss>
+    <h2>2. Company Details</h2>
+    <p alt>
+      When you create a {Service} Account, we ask for some personal information. This info helps keep your account secure and makes our services more useful.
+    </p>
   </div>
+`
+)
 
+
+//checkout modules
+
+let review =[
+  {
+  name:'Payment Plan',
+  description:'Single Payment Annual Plan',
+  action:'<button secondary>Edit</button>'
+  },
+
+  {
+  name:'Company Details',
+  description:'Nutanix <br>1740 Technology Dr #150, San Jose, CA 95110',
+  action:'<button secondary>Edit</button>'
+  },
+
+  {
+  name:'Payment Method',
+  description:'Master Card <br> Ending in 3498',
+  action:'<button secondary>Edit</button>'
+  },
+  {
+  name:'Automatic Renewal',
+  description:'Your plan will automatically renew on 12 December 2020',
+  action:'<button secondary>Off</button>'
+  },
+
+]
+
+/////////////////////////////////////////////
+
+
+//Checkout block
+let summary = ['Annual Plan','$45000']
+let summary2 = ['Subtotal','$45000']
+let summary3 = ['Total','$45000']
+
+
+$('container').append(`<div class='checkout-holder' fw hsd></div>`)
+
+$('.checkout-holder').append(`
+  <div card class='block-one sixty' vss>
+    <h2 fw> 3. Review and Confirm </h2>
+    <p alt> Beam subscriptions are based on how much you spend on the cloud.<br> Provide an estimate of your month cloud expenses & pick a payment plan to continue</p>
+  </div>
 `)
+
+$('.sixty').append(review.map(value => `
+    <div class='review-group' fw hcd>
+      <section>
+        <h3>${value.name}</h3>
+        <p alt> ${value.description}</p>
+      </section>
+      ${value.action}
+    </div>
+  `)
+)
+
+
+//confirmation purple  box
+
+$('.checkout-holder').append(`
+  <div card class='checkout'fw>
+    <h2 fw>Order Summary</h2>
+    <div hcd>
+      ${summary.map(value=>`<h3>${value}</h3>`).join('')}
+    </div>
+    <div hcd>
+      ${summary2.map(value=>`<h3>${value}</h3>`).join('')}
+    </div>
+    <div hcd>
+      ${summary3.map(value=>`<h3>${value}</h3>`).join('')}
+    </div>
+    <br>
+  </div>
+`)
+
+$('.checkout').append(`
+  <div class='confirmation'>
+    <div class='dark'>
+      <label> Promotional code </label>
+      <input type='text' class='dark'></input>
+    </div>
+    <button secondary fw>Complete purchase</button>
+  </div>`
+);

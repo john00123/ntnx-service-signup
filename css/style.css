@@ -502,7 +502,7 @@ body {
 }
 
 [logo] {
-  margin: -30px auto;
+  margin: -40px auto;
 }
 
 [card] {
@@ -593,6 +593,15 @@ input.calc0 {
 .block-one {
   padding-right: 40px;
   width: 440px;
+  margin-bottom: 10px;
+}
+
+.block-one p {
+  margin-top: 5px;
+}
+
+.sixty {
+  width: 800px;
 }
 
 .checkout {
@@ -601,33 +610,80 @@ input.calc0 {
   box-sizing: border-box;
   color: white;
   position: relative;
-  align-self: flex-start;
-  background-image: linear-gradient(45deg, #673BD6, #2D96F2);
-  padding-bottom: 30px;
   margin-left: 20px;
+  align-self: flex-start;
+  padding-bottom: 30px;
+  background-image: linear-gradient(45deg, #673BD6, #2D96F2);
 }
 
-.checkout button {
+.checkout h3 {
+  margin-top: 10px;
+}
+
+.dark {
+  margin: 15px 0;
+  position: relative;
+}
+
+.dark label {
+  color: white;
+}
+
+.dark input {
+  background: rgba(0, 0, 0, 0.1);
+  border: none !important;
+  color: white !important;
+}
+
+.dark:after {
+  content: 'Apply';
+  position: absolute;
+  top: 30px;
+  right: 15px;
+}
+
+.confirmation {
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.confirmation button {
   border-color: transparent;
+}
+
+.confirmation h4 {
+  line-height: 1.75;
+}
+
+.confirmation a {
+  color: white;
+  font-size: 12px;
+  text-decoration: underline;
 }
 
 form {
   width: 440px;
 }
 
+.review-group {
+  padding: 10px 0;
+  border-top: 1px solid #F2F4F6;
+}
+
 .rotate {
   top: 40%;
   left: 55%;
   position: absolute;
+  pointer-events: none;
   mix-blend-mode: overlay;
-  -webkit-animation: rotating 20s linear infinite;
+  animation: rotation 20s linear infinite;
 }
 
-@-webkit-keyframes rotating {
+@-webkit-keyframes rotation {
   from {
-    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

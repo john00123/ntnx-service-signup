@@ -4,7 +4,7 @@ $('container').append(
     <div class='block-one' vss>
       <h2> 1. Input your monthly cloud cost </h2>
 
-      <p alt> Beam subscriptions are based on how much you spend on the cloud.<br> Provide an estimate of your month cloud expenses.</p><p style='margin: 0 0 20px 0'>If your expenses surpases the $400,000  <a>Contact Us</a> </p> <br>
+      <p alt> Beam subscriptions are based on how much you spend on the cloud.<br> Provide an estimate of your month cloud expenses.</p><p style='margin: 0 0 20px 0'>If your expenses surpases the $400,000 dollars.<br><a>Contact our sales team</a> </p>
 
       <div class='input-currency'>
         <label> Monthly cloud cost</label>
@@ -12,7 +12,7 @@ $('container').append(
       </div>
     </div>
 
-    <img logo height=280px src='img/bg.png'/>
+    <img logo height=300px src='img/bg.png'/>
    </div>
   `
 )
