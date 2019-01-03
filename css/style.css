@@ -395,6 +395,10 @@ tr:last-child td {
   padding-bottom: 20px;
 }
 
+tr:nth-last-child(2) {
+  font-size: 20px !important;
+}
+
 td:first-child, th:first-child {
   text-align: left;
   padding-left: 30px;
@@ -556,6 +560,7 @@ input.calc0 {
 
 .input-currency {
   position: relative;
+  margin-top: 10px;
 }
 
 .input-currency::before, .input-currency::after {
