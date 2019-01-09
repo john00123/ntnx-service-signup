@@ -19,6 +19,7 @@ body{
   margin    : 0 auto ;
 }
 
+p span{ color: $font-color-1 }
 
 //subheader media-queries
 .steps{
@@ -136,26 +137,30 @@ input.calc0{
 //checkout block
 .checkout{
   @include size(100%, auto);
-  color:          white;
+  // color:          white;
+  font-weight: 400;
+
   position:     relative;
   margin-left:      20px;
+  border-radius: 0 0 4px 4px;
   align-self: flex-start;
   padding-bottom:   30px;
-  background-image: linear-gradient(45deg,#673BD6,#2D96F2);
+  border-top: 2px solid $blue-1;
+  background: white;
   h3 { margin-top: 10px}
 }
 
 
 .dark{
-  margin:15px 0;
+  margin-bottom:15px;
   position: relative;
-  label{ color: white}
+  // label{ color: white}
 
-  input{
-    background: rgba(0,0,0,0.1);
-    border: none!important;
-    color: white!important;
-  }
+  // input{
+  //   background: rgba(0,0,0,0.1);
+  //   border: none!important;
+  //   color: white!important;
+  // }
   &:after{
     content: 'Apply';
     position:absolute;

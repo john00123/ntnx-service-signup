@@ -105,7 +105,7 @@ info.map(value => $('.company-info').append(`
 //Form main text
 $('.company-info').prepend(
   `<div class='block-one' vss>
-    <h2>2. Company Details</h2>
+    <h2>Company Details</h2>
     <p alt>
       When you create a {Service} Account, we ask for some personal information. This info helps keep your account secure and makes our services more useful.
     </p>
@@ -155,7 +155,7 @@ $('container').append(`<div class='checkout-holder' fw hsd></div>`)
 
 $('.checkout-holder').append(`
   <div card class='block-one sixty' vss>
-    <h2 fw> 3. Review and Confirm </h2>
+    <h2 fw> Review and Confirm </h2>
     <p alt> Beam subscriptions are based on how much you spend on the cloud.<br> Provide an estimate of your month cloud expenses & pick a payment plan to continue</p>
   </div>
 `)
@@ -171,6 +171,21 @@ $('.sixty').append(review.map(value => `
   `)
 )
 
+
+$('container').append(`
+    <div card fw hcd><br>
+      <img height=240 style='padding:0 50px' src='../img/complete.svg'><br><br>
+      <div fw style='margin-left:40px'>
+        <h2 fw>Dear {User}, congratulations</h2>
+        <p alt > We would like to thank you for registering your {Service} account.<br>We have sent you an activation email. <a>Resend email</a><br><br>
+
+        After activating your account, you will be able to access {service}'s' platform, and all our support and community services. <br>Go {back} to your <a>Account Page.</a></p>
+        <br><br>
+        <button primary> Go to {Service}</button>
+      </div>
+    </div>
+  `
+)
 
 //confirmation purple  box
 
@@ -196,6 +211,6 @@ $('.checkout').append(`
       <label> Promotional code </label>
       <input type='text' class='dark'></input>
     </div>
-    <button secondary fw>Complete purchase</button>
+    <button primary fw>Complete purchase</button>
   </div>`
 );

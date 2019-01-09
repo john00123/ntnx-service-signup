@@ -31,10 +31,7 @@ $(window).on("load", function() {
   setTimeout(function () {
     $('.subheader').addClass('slideDown');
     $('container').addClass('slideDown');
+    $('body').scrollTop(0);
   }, 600);
 
-});
-
-$(window).scrollTop(60, function(){
-  alert('ji');
 });
