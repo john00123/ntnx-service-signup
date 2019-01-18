@@ -174,7 +174,7 @@ $('.sixty').append(review.map(value => `
 
 $('container').append(`
     <div card fw hcd><br>
-      <img height=240 style='padding:0 50px' src='/img/complete2.svg'><br><br>
+      <img height=240 style='padding:0 50px' src='img/complete2.svg'><br><br>
       <div fw style='margin-left:40px'>
         <h2 fw>Dear {User}, congratulations</h2>
         <p alt > We would like to thank you for registering your {Service} account.<br>We have sent you an activation email. <a>Resend email</a><br><br>
