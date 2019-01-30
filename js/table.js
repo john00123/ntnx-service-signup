@@ -139,6 +139,16 @@ let review =[
   description:'Your plan will automatically renew on 12 December 2020',
   action:'<button secondary>Off</button>'
   },
+  {
+  name:'Tax Documentation',
+  description:'No document has been uploaded',
+  action:'<button secondary>Upload</button>'
+  },
+  {
+  name:'Deal Registration Number',
+  description:'No partner associated',
+  action:'<input secondary></input>'
+  },
 
 ]
 
